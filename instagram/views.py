@@ -3,8 +3,10 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User,auth
 from .models import Profile
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required   #restricting users to only the logged in
 
 # Create your views here.
+@login_required(login_url = 'login')   #you must login to access the homepage
 def index(request):
     return render(request, 'index.html')
 
@@ -44,6 +46,7 @@ def login(request):
         messages.info(request,'Invalid credentials')
         return redirect ('login')
 
+@login_required(login_url = 'login')
 def logout(request):
     auth.logout(request)
     return redirect ('login')        
