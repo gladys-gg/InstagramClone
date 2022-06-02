@@ -41,6 +41,6 @@ def login(request):
             messages.info(request,'You are logged in successfully')
             return redirect ('index')
     else:
-        messages.info(request.'Invalid credentials')
+        messages.info(request,'Invalid credentials')
         return redirect ('login')
         
