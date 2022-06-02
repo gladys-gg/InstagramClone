@@ -28,3 +28,19 @@ def register(request):
         user = User.objects.create_user(username=username, email=email,password=password)
         user.save()
     return render(request, 'register.html')
+
+def login(request):
+    if request.method ==POST:
+        username = request.POST['username']
+        password = request.POST['password']
+        
+        user = auth.authenticate(username=username, password=password)
+        
+        if user is not None:   #user exists
+            auth.login(request,user)
+            messages.info(request,'You are logged in successfully')
+            return redirect ('index')
+    else:
+        messages.info(request.'Invalid credentials')
+        return redirect ('login')
+        
