@@ -1,33 +1,18 @@
-    <main>
-        <div class="page">
-            <div class="header">
-            <h1 class="logo">Picturegram</h1>
-            <p>Sign up to see photos and videos from your friends.</p>
-            <button><i class="fab fa-facebook-square"></i> Log in with Facebook</button>
-            <div>
-                <hr>
-                <p>OR</p>
-                <hr>
-            </div>
-            </div>
-            <div class="container">
-                <div style="color:red;">
-                {% for message in messages %}
-                <h6>{{message}}</h6>
-                {% endfor %}
-                </div>
-            <form action="" method="POST">
-                {% csrf_token %}
-                <input type="text" placeholder="Username" name="username">
-                <input type="email" placeholder="Email" name="email">
-                <input type="password" placeholder="Password" name="password">
-                <input type="password" placeholder="Confirm Password"name=password2>
-                <button>Sign up</button>
-            </form>
-            
-            </div>
-        </div>
-        <div class="option">
-        <p>Have an account? <a href="">Log in</a></p>
-        </div>
-    </main>
+
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+
+<!--Register--> 
+<div class="container py-5">
+	<h1>Register</h1>
+	<form method="POST">
+		{% csrf_token %}
+		{{ register_form|crispy }}                    
+		<button class="btn btn-primary" type="submit">Register</button>
+	</form>
+	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+</div>
+
+{% endblock %}
