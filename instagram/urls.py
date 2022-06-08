@@ -1,12 +1,18 @@
 from django.urls import path
 from . import views
+from django.contrib.auth import views as auth_views
+from django.urls import reverse_lazy
+from instagram.views import EditProfile
 
-#apps urls
 urlpatterns = [
-    path('', views.index, name = 'index'),
-    path('register', views.register, name = 'register'),
-    path('login', views.login_request, name = 'login'),
-    path('logout', views.logout, name = 'logout'),
-    path('settings', views.profile, name = 'profile'),
+    # Profile Section
+    path('profile/edit', EditProfile, name="editprofile"),
+
+    # User Authentication
+
+    path('sign-up/',views.register,name='sign-up'),
+    path('accounts/sign-in/',views.signin,name='sign-in'),
+    path('sign-out/', views.signout, name='sign-out'),
+
 ]
 
