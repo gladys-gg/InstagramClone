@@ -2,6 +2,8 @@
 
 This is an Instagram Clone application where it allows users to upload, like and comment on other peoples posts.All posts will be displayed on the Profile of a user.
 
+![insta1](https://user-images.githubusercontent.com/73462428/172686413-ebdecdb7-3743-4594-99e4-cd0cd01cbc04.png)
+
 ###  User Stories
 - These are the behaviours/features that the application implements for use by a user.
 
@@ -10,10 +12,14 @@ This is an Instagram Clone application where it allows users to upload, like and
 * View all images submitted by any user.
 * Click on images to display more details.
 * Search for users.
-* Receive email when signing up.
 * Follow others.
 * Like Images.
 
+
+
+![insta3](https://user-images.githubusercontent.com/73462428/172687509-f2b6c6be-8346-45c5-987e-fb5f822f8287.png)
+
+![insta4](https://user-images.githubusercontent.com/73462428/172687548-ea8dd3f4-d1e9-443b-80e8-b7919b1d69da.png)
 
 #### Admin Abilities
 - These are the behaviours/features that the application implements for use by the admin.
@@ -53,6 +59,7 @@ None, follow this link to get run the application.
 #### Deployment
 
 Deploying the Django Apps to Heroku to view.
+
 
 ## Built With
 
