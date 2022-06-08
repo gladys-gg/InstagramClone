@@ -143,7 +143,7 @@ LOGIN_REDIRECT_URL = 'index'
 
 LOGOUT_REDIRECT_URL = 'sign-in'
 
-LOGIN_URL = ''
+LOGIN_URL = 'sign-in'
 
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
