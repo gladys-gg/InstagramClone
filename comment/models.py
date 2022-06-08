@@ -12,7 +12,7 @@ class Comment(models.Model):
     date = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
-        return self.post
+        return self.comment
     
     def user_comment_post(sender, instance, *args, **kwargs):
         comment = instance
@@ -28,3 +28,12 @@ class Comment(models.Model):
         sender = comment.user
         notify = Notification.objects.filter(post=post, sender=sender, user=post.user, notification_types=2)
         notify.delete()
+
+
+    def save_comment(self):
+        self.save()
+
+    @classmethod
+    def get_comment(cls):
+        comment = Comment.objects.all()[::-1]
+        return comment
